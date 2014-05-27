@@ -1,0 +1,56 @@
+'Lelesys.Comments:Comment':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Comments'
+    group: 'plugins'
+    inspector:
+      groups:
+        comment:
+          label: 'Comments'
+  properties:
+    name:
+      type: string
+      ui:
+        label: Author
+        reloadIfChanged: true
+        inspector:
+          group: comment
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+    emailAddress:
+      type: string
+      ui:
+        label: 'Email Address'
+        reloadIfChanged: true
+        inspector:
+          group: comment
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+    homePage:
+      type: string
+      ui:
+        label: 'Home Page'
+        reloadIfChanged: true
+        inspector:
+          group: comment
+    location:
+      type: string
+      ui:
+        label: 'Location'
+        reloadIfChanged: true
+        inspector:
+          group: comment
+    text:
+      type: string
+      defaultValue: '<p>Your Comment Here</p>'
+      ui:
+        inlineEditable: true
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+    date:
+      type: date
+      ui:
+        label: 'Date'
+        reloadIfChanged: true
+        inspector:
+          group: comment

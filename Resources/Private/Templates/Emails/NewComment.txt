@@ -1,0 +1,9 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+Hello, <br /><br />
+
+{commentNode.properties.name} has added new comment.<br />
+<neos:link.node absolute="{true}" node="{documentNode}">Click here to see details</neos:link.node><br /><br /><br />
+
+Comment:<br />
+{commentNode.properties.text}

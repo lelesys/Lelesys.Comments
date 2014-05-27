@@ -1,0 +1,31 @@
+##
+# Auto include typoscript configuration
+#
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'Lelesys.Comments': TRUE
+
+
+##
+# The configuration for Comments plugin
+#
+Lelesys:
+  Comments:
+    # Comment moderation
+    # Off: 0, On: 1
+    moderation: 0
+    notification:
+      subject: 'New Comment is added'
+      email: 'atul.joshi@lelesys.com'
+      name: 'Atul Joshi'
+      # txt or html
+      format: 'txt'
+      template:
+        html:
+          templatePathAndFilename: 'resource://Lelesys.Comments/Private/Templates/Emails/NewComment.html'
+        txt:
+          templatePathAndFilename: 'resource://Lelesys.Comments/Private/Templates/Emails/NewComment.txt'
+    translation:
+      packageKey: 'Lelesys.Comments'

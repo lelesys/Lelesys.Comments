@@ -1,0 +1,8 @@
+-
+  name: 'Create comment'
+  uriPattern:    'comment/create'
+  defaults:
+    '@package':    'Lelesys.Comments'
+    '@controller': 'Comment'
+    '@format': 'html'
+    '@action': 'create'

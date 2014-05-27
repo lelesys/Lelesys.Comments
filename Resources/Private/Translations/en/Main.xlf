@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Lelesys.Comments" source-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="Lelesys.Comments.NewComment">
+				<source>Your new comment is created.</source>
+			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Homepage">
+				<source>Homepage</source>
+			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Comment">
+				<source>Comment</source>
+			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Submit">
+				<source>Submit</source>
+			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Error.Name">
+				<source>Your comment is not created - please specify your name.</source>
+			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Error.Email">
+				<source>Your comment is not created - please specify valid email address.</source>
+			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Error.Homepage">
+				<source>Your comment is not created - Please specify valid url for homepage.</source>
+			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Error.Homepage">
+				<source>Your comment is not created - Please specify valid url for homepage.</source>
+			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Error.Comment">
+				<source>Your comment is not created - Please add your comment.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

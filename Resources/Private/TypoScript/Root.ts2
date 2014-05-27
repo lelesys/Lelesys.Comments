@@ -1,0 +1,14 @@
+prototype(Lelesys.Comments:Comment) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://Lelesys.Comments/Private/Templates/NodeTypes/Comment.html'
+	attributes = TYPO3.TypoScript:Attributes
+	attributes.class = 'comment'
+}
+
+prototype(Lelesys.Comments:NewComment) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://Lelesys.Comments/Private/Templates/NodeTypes/NewComment.html'
+	text = ${q(node).property('text')}
+	node = ${node}
+	attributes = TYPO3.TypoScript:Attributes
+	attributes.class = 'new-comment'
+	settings = ${Configuration.setting('Lelesys.Comments')}
+}

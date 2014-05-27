@@ -1,0 +1,49 @@
+<div {attributes -> f:format.raw()} >
+	<f:flashMessages as="flashMessages">
+		<f:for each="{flashMessages}" as="flashMessage">
+			<div class="alert {f:if(condition: "{0: flashMessage.severity}  ==  {0: 'OK'}" , then: 'alert-success', else: 'alert-danger')}">
+				{flashMessage}
+			</div>
+		</f:for>
+	</f:flashMessages>
+	<f:form action="create" controller="Comment" package="Lelesys.Comments" object="{newComment}" name="newComment">
+	 <f:form.validationResults>
+		<f:if condition="{validationResults.flattenedErrors}">
+		   <ul class="errors">
+			 <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+			   <li>{propertyPath}
+				 <ul>
+					 <f:debug>{errors}</f:debug>
+				 <f:for each="{errors}" as="error">
+				   <li>{error}</li>
+				 </f:for>
+				 </ul>
+			   </li>
+			 </f:for>
+		   </ul>
+		 </f:if>
+	   </f:form.validationResults>
+		<f:form.hidden name="node" value="{node.path}" />
+		<div class="form-group">
+			<label for="author"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Name">Name</f:translate> <span class="required">*</span></label>
+			<f:form.textfield id="author" property="name" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label for="emailaddress"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Email">Email</f:translate> <span class="required">*</span></label>
+			<f:form.textfield id="emailaddress" property="emailAddress" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label for="homepage"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Homepage">Homepage</f:translate></label>
+			<f:form.textfield id="homepage" property="homePage" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label for="location"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Location">Location</f:translate></label>
+			<f:form.textfield id="location" property="location" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label for="comment"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Comment">Comment</f:translate> <span class="required">*</span></label>
+			<f:form.textarea id="comment" property="text" rows="10" cols="50" class="form-control" />
+		</div>
+		<f:form.submit value="{f:translate(value: 'Submit', package: '{settings.translation.packageKey}', id: 'Lelesys.Comments.Submit')}" class="btn btn-primary"  />
+	</f:form>
+</div>

@@ -1,0 +1,7 @@
+resources:
+  methods:
+    'Lelesys.Comments:CommentController': 'method(Lelesys\Comments\Controller\CommentController->createAction())'
+acls:
+  Everybody:
+    methods:
+      'Lelesys.Comments:CommentController': GRANT
