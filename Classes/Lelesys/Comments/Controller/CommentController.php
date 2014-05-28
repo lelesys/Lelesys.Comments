@@ -33,11 +33,13 @@ class CommentController extends ActionController {
 	/**
 	 * Create new comment
 	 *
+	 * @Flow\Validate(type="Lelesys\Captcha\Validators\CaptchaValidator", value="captcha")
 	 * @param NodeInterface $node The node which will contain the new comment
 	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeTemplate<Lelesys.Comments:Comment> $newComment The new comment
+	 * @param string $capthca The captcha
 	 * @return void
 	 */
-	public function createAction(NodeInterface $node, NodeTemplate $newComment) {
+	public function createAction(NodeInterface $node, NodeTemplate $newComment, $captcha) {
 			// Get a document node if node is not instance of TYPO3.Neos:Document
 		$flowQuery = new FlowQuery(array($node));
 		if ($flowQuery->is('[instanceof TYPO3.Neos:Document]') === FALSE) {
@@ -90,4 +92,13 @@ class CommentController extends ActionController {
 	 */
 	protected function emitCommentCreated(NodeInterface $node, NodeInterface $commentNode, NodeInterface $documentNode) {}
 
+	/**
+	 * Get error flash message
+	 *
+	 * @return boolean No flash messagen set
+	 * @api
+	 */
+	protected function getErrorFlashMessage() {
+		return FALSE;
+	}
 }

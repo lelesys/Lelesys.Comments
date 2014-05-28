@@ -38,6 +38,9 @@
 			<trans-unit id="Lelesys.Comments.Error.Comment">
 				<source>Your comment is not created - Please add your comment.</source>
 			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Word.Verification">
+				<source>Word Verification</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

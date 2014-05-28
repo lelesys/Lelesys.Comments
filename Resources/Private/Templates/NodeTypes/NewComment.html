@@ -1,3 +1,4 @@
+{namespace l = Lelesys\Captcha\ViewHelpers}
 <div {attributes -> f:format.raw()} >
 	<f:flashMessages as="flashMessages">
 		<f:for each="{flashMessages}" as="flashMessage">
@@ -9,18 +10,13 @@
 	<f:form action="create" controller="Comment" package="Lelesys.Comments" object="{newComment}" name="newComment">
 	 <f:form.validationResults>
 		<f:if condition="{validationResults.flattenedErrors}">
-		   <ul class="errors">
 			 <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
-			   <li>{propertyPath}
-				 <ul>
-					 <f:debug>{errors}</f:debug>
 				 <f:for each="{errors}" as="error">
-				   <li>{error}</li>
+				   <div class="alert alert-danger">
+					   {error}
+				   </div>
 				 </f:for>
-				 </ul>
-			   </li>
 			 </f:for>
-		   </ul>
 		 </f:if>
 	   </f:form.validationResults>
 		<f:form.hidden name="node" value="{node.path}" />
@@ -44,6 +40,13 @@
 			<label for="comment"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Comment">Comment</f:translate> <span class="required">*</span></label>
 			<f:form.textarea id="comment" property="text" rows="10" cols="50" class="form-control" />
 		</div>
-		<f:form.submit value="{f:translate(value: 'Submit', package: '{settings.translation.packageKey}', id: 'Lelesys.Comments.Submit')}" class="btn btn-primary"  />
+		<div class="form-group">
+			<label for="comment"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Word.Verification">Word Verification</f:translate> <span class="required">*</span></label>
+			<l:captcha />
+			<f:form.textfield id="captach" name="captcha" class="form-control" />
+		</div>
+		<div>
+			<f:form.submit value="{f:translate(value: 'Submit', package: '{settings.translation.packageKey}', id: 'Lelesys.Comments.Submit')}" class="btn btn-primary"  />
+		</div>
 	</f:form>
 </div>
