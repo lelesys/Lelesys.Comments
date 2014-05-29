@@ -34,6 +34,7 @@ class CommentController extends ActionController {
 	 * Create new comment
 	 *
 	 * @Flow\Validate(type="Lelesys\Captcha\Validators\CaptchaValidator", value="captcha")
+	 * @Flow\Validate(type="Lelesys\Comments\Validation\Validators\CommentValidator", value="newComment")
 	 * @param NodeInterface $node The node which will contain the new comment
 	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeTemplate<Lelesys.Comments:Comment> $newComment The new comment
 	 * @param string $capthca The captcha
@@ -46,27 +47,6 @@ class CommentController extends ActionController {
 			$documentNode = $flowQuery->closest('[instanceof TYPO3.Neos:Document]')->get(0);
 		} else {
 			$documentNode = $node;
-		}
-
-		if (trim($newComment->getProperty('name')) === '') {
-			$this->addFlashMessage($this->translator->translateById('Lelesys.Comments.Error.Name', array(), NULL, NULL, 'Main', $this->settings['translation']['packageKey']), '', Message::SEVERITY_ERROR);
-			$this->redirect('show', 'Frontend\Node', 'TYPO3.Neos', array('node' => $documentNode));
-		}
-
-		if (filter_var($newComment->getProperty('emailAddress'), FILTER_VALIDATE_EMAIL) === FALSE) {
-			$this->addFlashMessage($this->translator->translateById('Lelesys.Comments.Error.Email', array(), NULL, NULL, 'Main', $this->settings['translation']['packageKey']), '', Message::SEVERITY_ERROR);
-			$this->redirect('show', 'Frontend\Node', 'TYPO3.Neos', array('node' => $documentNode));
-		}
-
-		if (trim($newComment->getProperty('homePage')) !== ''
-			&& filter_var(trim($newComment->getProperty('homePage')), FILTER_VALIDATE_URL) === FALSE) {
-			$this->addFlashMessage($this->translator->translateById('Lelesys.Comments.Error.Homepage', array(), NULL, NULL, 'Main', $this->settings['translation']['packageKey']), '', Message::SEVERITY_ERROR);
-			$this->redirect('show', 'Frontend\Node', 'TYPO3.Neos', array('node' => $documentNode));
-		}
-
-		if (trim($newComment->getProperty('text')) === '') {
-			$this->addFlashMessage($this->translator->translateById('Lelesys.Comments.Error.Comment', array(), NULL, NULL, 'Main', $this->settings['translation']['packageKey']), '', Message::SEVERITY_ERROR);
-			$this->redirect('show', 'Frontend\Node', 'TYPO3.Neos', array('node' => $documentNode));
 		}
 
 		$commentNode = $node->getNode('comments')->createNodeFromTemplate($newComment);

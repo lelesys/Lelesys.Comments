@@ -8,43 +8,49 @@
 		</f:for>
 	</f:flashMessages>
 	<f:form action="create" controller="Comment" package="Lelesys.Comments" object="{newComment}" name="newComment">
-	 <f:form.validationResults>
-		<f:if condition="{validationResults.flattenedErrors}">
-			 <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
-				 <f:for each="{errors}" as="error">
-				   <div class="alert alert-danger">
-					   {error}
-				   </div>
-				 </f:for>
-			 </f:for>
-		 </f:if>
-	   </f:form.validationResults>
 		<f:form.hidden name="node" value="{node.path}" />
 		<div class="form-group">
-			<label for="author"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Name">Name</f:translate> <span class="required">*</span></label>
+			<label for="author" class="control-label">
+				<f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Name">Name</f:translate> <span class="required">*</span>
+			</label>
 			<f:form.textfield id="author" property="name" class="form-control" />
 		</div>
+		<f:render partial="FormError" arguments="{for: 'newComment.name'}" />
 		<div class="form-group">
-			<label for="emailaddress"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Email">Email</f:translate> <span class="required">*</span></label>
+			<label for="emailaddress" class="control-label">
+				<f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Email">Email</f:translate> <span class="required">*</span>
+			</label>
 			<f:form.textfield id="emailaddress" property="emailAddress" class="form-control" />
 		</div>
+		<f:render partial="FormError" arguments="{for: 'newComment.emailAddress'}" />
 		<div class="form-group">
-			<label for="homepage"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Homepage">Homepage</f:translate></label>
+			<label for="homepage" class="control-label">
+				<f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Homepage">Homepage</f:translate>
+			</label>
 			<f:form.textfield id="homepage" property="homePage" class="form-control" />
 		</div>
+		<f:render partial="FormError" arguments="{for: 'newComment.homePage'}" />
 		<div class="form-group">
-			<label for="location"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Location">Location</f:translate></label>
+			<label for="location" class="control-label">
+				<f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Location">Location</f:translate>
+			</label>
 			<f:form.textfield id="location" property="location" class="form-control" />
 		</div>
 		<div class="form-group">
-			<label for="comment"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Comment">Comment</f:translate> <span class="required">*</span></label>
+			<label for="comment" class="control-label">
+				<f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Comment">Comment</f:translate> <span class="required">*</span>
+			</label>
 			<f:form.textarea id="comment" property="text" rows="10" cols="50" class="form-control" />
 		</div>
+		<f:render partial="FormError" arguments="{for: 'newComment.text'}" />
 		<div class="form-group">
-			<label for="captach"><f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Word.Verification">Word Verification</f:translate> <span class="required">*</span></label>
+			<label for="captcha" class="control-label">
+				<f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Word.Verification">Word Verification</f:translate> <span class="required">*</span>
+			</label>
 			<l:captcha />
-			<f:form.textfield id="captach" name="captcha" class="form-control" />
+			<f:form.textfield id="captcha" name="captcha" class="form-control" />
 		</div>
+		<f:render partial="FormError" arguments="{for: 'captcha'}" />
 		<div>
 			<f:form.submit value="{f:translate(value: 'Submit', package: '{settings.translation.packageKey}', id: 'Lelesys.Comments.Submit')}" class="btn btn-primary"  />
 		</div>

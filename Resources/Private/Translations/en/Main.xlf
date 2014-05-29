@@ -23,20 +23,17 @@
 			<trans-unit id="Lelesys.Comments.Submit">
 				<source>Submit</source>
 			</trans-unit>
-			<trans-unit id="Lelesys.Comments.Error.Name">
-				<source>Your comment is not created - please specify your name.</source>
+			<trans-unit id="Lelesys.Comments.Error.1401345497">
+				<source>Please specify your name.</source>
 			</trans-unit>
-			<trans-unit id="Lelesys.Comments.Error.Email">
-				<source>Your comment is not created - please specify valid email address.</source>
+			<trans-unit id="Lelesys.Comments.Error.1401345548">
+				<source>Please specify valid email address.</source>
 			</trans-unit>
-			<trans-unit id="Lelesys.Comments.Error.Homepage">
-				<source>Your comment is not created - Please specify valid url for homepage.</source>
+			<trans-unit id="Lelesys.Comments.Error.1401345550">
+				<source>Please specify valid url for homepage.</source>
 			</trans-unit>
-			<trans-unit id="Lelesys.Comments.Error.Homepage">
-				<source>Your comment is not created - Please specify valid url for homepage.</source>
-			</trans-unit>
-			<trans-unit id="Lelesys.Comments.Error.Comment">
-				<source>Your comment is not created - Please add your comment.</source>
+			<trans-unit id="Lelesys.Comments.Error.1401345555">
+				<source>Please add your comment.</source>
 			</trans-unit>
 			<trans-unit id="Lelesys.Comments.Word.Verification">
 				<source>Word Verification</source>
