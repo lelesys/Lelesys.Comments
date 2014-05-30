@@ -38,6 +38,9 @@
 			<trans-unit id="Lelesys.Comments.Word.Verification">
 				<source>Word Verification</source>
 			</trans-unit>
+			<trans-unit id="Lelesys.Comments.Error.1221560718">
+				<source>Please fill the captcha</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

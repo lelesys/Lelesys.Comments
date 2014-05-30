@@ -34,13 +34,14 @@ class CommentController extends ActionController {
 	 * Create new comment
 	 *
 	 * @Flow\Validate(type="Lelesys\Captcha\Validators\CaptchaValidator", value="captcha")
+	 * @Flow\Validate(type="NotEmpty", value="captcha")
 	 * @Flow\Validate(type="Lelesys\Comments\Validation\Validators\CommentValidator", value="newComment")
 	 * @param NodeInterface $node The node which will contain the new comment
 	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeTemplate<Lelesys.Comments:Comment> $newComment The new comment
 	 * @param string $capthca The captcha
 	 * @return void
 	 */
-	public function createAction(NodeInterface $node, NodeTemplate $newComment, $captcha) {
+	public function createAction(NodeInterface $node, NodeTemplate $newComment, $captcha = NULL) {
 			// Get a document node if node is not instance of TYPO3.Neos:Document
 		$flowQuery = new FlowQuery(array($node));
 		if ($flowQuery->is('[instanceof TYPO3.Neos:Document]') === FALSE) {

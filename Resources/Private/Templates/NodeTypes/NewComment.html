@@ -43,14 +43,16 @@
 			<f:form.textarea id="comment" property="text" rows="10" cols="50" class="form-control" />
 		</div>
 		<f:render partial="FormError" arguments="{for: 'newComment.text'}" />
-		<div class="form-group">
-			<label for="captcha" class="control-label">
-				<f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Word.Verification">Word Verification</f:translate> <span class="required">*</span>
-			</label>
-			<l:captcha />
-			<f:form.textfield id="captcha" name="captcha" class="form-control" />
-		</div>
-		<f:render partial="FormError" arguments="{for: 'captcha'}" />
+		<f:if condition="{settings.newComment.captcha}" >
+			<div class="form-group">
+				<label for="captcha" class="control-label">
+					<f:translate package="{settings.translation.packageKey}" id="Lelesys.Comments.Word.Verification">Word Verification</f:translate> <span class="required">*</span>
+				</label>
+				<l:captcha />
+				<f:form.textfield id="captcha" name="captcha" class="form-control" />
+			</div>
+			<f:render partial="FormError" arguments="{for: 'captcha'}" />
+		</f:if>
 		<div>
 			<f:form.submit value="{f:translate(value: 'Submit', package: '{settings.translation.packageKey}', id: 'Lelesys.Comments.Submit')}" class="btn btn-primary"  />
 		</div>

@@ -1,4 +1,4 @@
-prototype(Lelesys.Comments:Comment) < prototype(TYPO3.Neos:Content) {
+prototype(Lelesys.Comments:Comment) {
 	templatePath = 'resource://Lelesys.Comments/Private/Templates/NodeTypes/Comment.html'
 	attributes = TYPO3.TypoScript:Attributes
 	attributes.class = 'comment'

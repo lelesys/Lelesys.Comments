@@ -29,3 +29,7 @@ Lelesys:
           templatePathAndFilename: 'resource://Lelesys.Comments/Private/Templates/Emails/NewComment.txt'
     translation:
       packageKey: 'Lelesys.Comments'
+    newComment:
+      # Captcha is required or not
+      # required: TRUE, Not required: FALSE
+      captcha: TRUE
