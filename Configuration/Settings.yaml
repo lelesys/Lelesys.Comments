@@ -18,8 +18,8 @@ Lelesys:
     moderation: 0
     notification:
       subject: 'New Comment is added'
-      email: 'atul.joshi@lelesys.com'
-      name: 'Atul Joshi'
+      email: 'vedika.bhide@lelesys.com'
+      name: 'Vedika Bhide'
       # txt or html
       format: 'txt'
       template:

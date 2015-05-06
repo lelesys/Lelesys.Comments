@@ -9,8 +9,8 @@
 		</f:if>
 	</div>
 	<div>
-		<neos:contentElement node="{node}">
+		<neos:contentElement.wrap node="{node}">
 			<p class="content"><neos:contentElement.editable property="text" tag="span">{text -> f:format.nl2br()}</neos:contentElement.editable></p>
-		</neos:contentElement>
+		</neos:contentElement.wrap>
 	</div>
 </div>

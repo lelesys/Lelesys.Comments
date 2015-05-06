@@ -48,7 +48,7 @@
       validation:
         'TYPO3.Neos/Validation/NotEmptyValidator': []
     date:
-      type: date
+      type: DateTime
       ui:
         label: 'Date'
         reloadIfChanged: true

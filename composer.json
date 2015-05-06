@@ -11,9 +11,9 @@
 		}
 	],
     "require": {
-        "typo3/neos": "1.2.*",
-	"typo3/swiftmailer": "4.1.5",
-	"lelesys/captcha": "1.0.*"
+        "typo3/neos": "dev-master",
+		"typo3/swiftmailer": "dev-master",
+		"lelesys/captcha": "dev-master"
     },
     "autoload": {
         "psr-0": {

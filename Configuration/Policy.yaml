@@ -1,7 +1,11 @@
-resources:
-  methods:
-    'Lelesys.Comments:CommentController': 'method(Lelesys\Comments\Controller\CommentController->createAction())'
-acls:
-  Everybody:
-    methods:
-      'Lelesys.Comments:CommentController': GRANT
+
+privilegeTargets:
+  'TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+    'Lelesys.Comments:CommentController':
+       matcher: 'method(Lelesys\Comments\Controller\CommentController->createAction())'
+roles:
+  'TYPO3.Flow:Everybody':
+    privileges:
+      -
+        privilegeTarget: 'Lelesys.Comments:CommentController'
+        permission: GRANT
